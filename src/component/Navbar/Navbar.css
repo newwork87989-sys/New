@@ -1,0 +1,103 @@
+* {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+          height: 70px;
+          padding: 0 40px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: linear-gradient(135deg, #1e3c72, #2a5298);
+          color: #fff;
+        }
+
+        .logo {
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        .logo span {
+          color: #ffd369;
+        }
+
+        .nav-links {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          gap: 25px;
+        }
+
+        .nav-links :any-link{
+          text-decoration: none;
+          color: #fff;
+          font-size: 16px;
+          position: relative;
+        }
+
+        .nav-links :any-link::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          background: #ffd369;
+          left: 0;
+          bottom: -6px;
+          transition: 0.3s;
+        }
+
+        .nav-links :any-link:hover::after {
+          width: 100%;
+        }
+
+        .btn {
+          padding: 8px 18px;
+          border: none;
+          border-radius: 20px;
+          background: #ffd369;
+          color: #000;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .btn:hover {
+          background: #ffb703;
+        }
+
+        .menu {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 5px;
+        }
+
+        .menu span {
+          width: 25px;
+          height: 3px;
+          background: #fff;
+        }
+
+        @media (max-width: 768px) {
+          .menu {
+            display: flex;
+          }
+
+          .nav-links {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #1e3c72;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 0;
+            display: none;
+          }
+
+          .nav-links.open {
+            display: flex;
+          }
+        }
